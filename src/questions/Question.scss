@@ -1,3 +1,18 @@
-.question {
-    color: white;
+li {
+    list-style-type: none;
 }
+
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+
+    button {
+        width: 10vw;
+        margin-top: 2rem;
+        cursor: pointer;
+    }
+}
+

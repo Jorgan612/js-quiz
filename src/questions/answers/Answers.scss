@@ -1,0 +1,22 @@
+.answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // it's saying the white border is on this class?
+}
+
+.answer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+
+.answer:hover {
+    background-color: #515357;
+    transition: .5s;
+}
