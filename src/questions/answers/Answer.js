@@ -27,8 +27,19 @@ function Answer({question}) {
 
 export default Answer;
 
-// CONSIDER REMOVING READIO BOTTOM AND JUST DOING SOME CONDITIONAL LOGIC TO HIGHLIGHT SELECTED ANSWER INSTEAD. USER CAN GO BACK AND CHANGE THEIR ANSWER BEFORE SUBMITTING 
+// Figure out adding selected Answer to question object to get score when Finish Quiz button is clicked.
 
-// 'FINISH QUIZ' BUTTON AT THE BOTTOM CALCULATES % CORRECT AND SHOWS RETRY BOTTON
+/*
+Implement Finish Quiz button functinality. It should: 
+[ ] Verify selected answer is correct answer
+[ ] Update styling to reflect correct vs incorrect answer
+[ ] Provide percentage correct text at the bottom of the screen
+[ ] Show 'Retry?' button 
+*/
 
-// FIGURE OUT VISUAL DIVIDE BETWEEN QUESTIONS
+/* 
+Retry botton should:
+[ ] Reset quiz by clearing selected answers
+[ ] Reset styling of answers to default
+[ ] Clear/hide percentage correct and 'Retry?' botton
+ */
