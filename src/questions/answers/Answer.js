@@ -1,20 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Answers.scss'
 
 function Answer({question}) {
 
     const [selectedAnswer, setSelectedAnswer] = useState('')
 
+    useEffect(() => {
+        console.log("Updated selectedAnswer:", selectedAnswer);
+    }, [selectedAnswer]);
+
     const selectAnswer = (answer) => {
         setSelectedAnswer(answer)
-        // running into error in which selectedAnswer doesn't get update on the second selection (until third selection). TROUBLESHOOT WHEN STATE GET'S UPDATE!
-        console.log('selectedAnswer', selectedAnswer)
     }
 
     return (
         <div className='answers'>
             {question.answers.map((answer) => (
-                <div className="answer" onClick={() => {selectAnswer(answer)}} key={answer}>
+                <div className={`answer ${selectedAnswer === answer ? 'active' : 'default'}`} onClick={() => {selectAnswer(answer)}} key={answer}>
                     <p key={answer}>{answer}</p>
                 </div>
             ))}

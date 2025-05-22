@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // it's saying the white border is on this class?
 }
 
 .answer {
@@ -19,4 +18,19 @@
 .answer:hover {
     background-color: #515357;
     transition: .5s;
+    cursor: pointer;
+}
+
+.active {
+    border: 2px solid #44b253; 
+    background-color: rgb(144, 253, 158, .4);
+}
+
+.incorrect {
+    border: 2px solid #b8271a; 
+    background-color:rgb(235, 100, 87, .4);
+}
+
+.default {
+    border: none;
 }
