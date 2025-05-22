@@ -1,10 +1,20 @@
+import { useState } from 'react'
 import './Answers.scss'
 
 function Answer({question}) {
+
+    const [selectedAnswer, setSelectedAnswer] = useState('')
+
+    const selectAnswer = (answer) => {
+        setSelectedAnswer(answer)
+        // running into error in which selectedAnswer doesn't get update on the second selection (until third selection). TROUBLESHOOT WHEN STATE GET'S UPDATE!
+        console.log('selectedAnswer', selectedAnswer)
+    }
+
     return (
         <div className='answers'>
             {question.answers.map((answer) => (
-                <div className="answer">
+                <div className="answer" onClick={() => {selectAnswer(answer)}}>
                     <p key={answer}>{answer}</p>
                 </div>
             ))}
