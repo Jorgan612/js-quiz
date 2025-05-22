@@ -5,8 +5,8 @@ function Question({questions}) {
     return (
         <div className='question'>
                 {questions.map((q) => (
-            <div>
-                <p key={q.question}>{q.question}</p>
+            <div key={q.question}>
+                <p>{q.question}</p>
                 <Answer question={q} />
                 <div>******************************************************************************************</div>
             </div>

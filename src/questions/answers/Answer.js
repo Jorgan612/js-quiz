@@ -14,7 +14,7 @@ function Answer({question}) {
     return (
         <div className='answers'>
             {question.answers.map((answer) => (
-                <div className="answer" onClick={() => {selectAnswer(answer)}}>
+                <div className="answer" onClick={() => {selectAnswer(answer)}} key={answer}>
                     <p key={answer}>{answer}</p>
                 </div>
             ))}

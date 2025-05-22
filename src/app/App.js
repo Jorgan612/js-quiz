@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        JS Trivia!
+        JS Quiz!
       </header>
       <div className='question-answers-container'>
         <Question questions={questions} />
