@@ -21,7 +21,17 @@
     cursor: pointer;
 }
 
-.active {
+
+.default {
+    border: none;
+}
+
+.selected {
+    border: 2px solid #1b80af; 
+    background-color: rgba(58, 184, 223, 0.4);
+}
+
+.correct {
     border: 2px solid #44b253; 
     background-color: rgb(144, 253, 158, .4);
 }
@@ -29,8 +39,4 @@
 .incorrect {
     border: 2px solid #b8271a; 
     background-color:rgb(235, 100, 87, .4);
-}
-
-.default {
-    border: none;
 }

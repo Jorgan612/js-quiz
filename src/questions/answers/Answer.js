@@ -16,7 +16,7 @@ function Answer({question}) {
     return (
         <div className='answers'>
             {question.answers.map((answer) => (
-                <div className={`answer ${selectedAnswer === answer ? 'active' : 'default'}`} onClick={() => {selectAnswer(answer)}} key={answer}>
+                <div className={`answer ${selectedAnswer === answer ? 'selected' : 'default'}`} onClick={() => {selectAnswer(answer)}} key={answer}>
                     <p key={answer}>{answer}</p>
                 </div>
             ))}
