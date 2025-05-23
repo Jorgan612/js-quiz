@@ -6,17 +6,18 @@ function Answer({question}) {
     const [selectedAnswer, setSelectedAnswer] = useState('')
 
     useEffect(() => {
-        console.log("Updated selectedAnswer:", selectedAnswer);
+
     }, [selectedAnswer]);
 
-    const selectAnswer = (answer) => {
+    const selectAnswer = (answer, question) => {
         setSelectedAnswer(answer)
+        question.selectedAnswer = answer;
     }
 
     return (
         <div className='answers'>
             {question.answers.map((answer) => (
-                <div className={`answer ${selectedAnswer === answer ? 'selected' : 'default'}`} onClick={() => {selectAnswer(answer)}} key={answer}>
+                <div className={`answer ${selectedAnswer === answer ? 'selected' : 'default'}`} onClick={() => {selectAnswer(answer, question)}} key={answer}>
                     <p key={answer}>{answer}</p>
                 </div>
             ))}

@@ -2,6 +2,20 @@ import Answer from './answers/Answer';
 import './Question.scss';
 
 function Question({questions}) {
+
+
+    const completeQuiz = () => {
+        const correctAnswers = questions.filter((question) => {
+            return question.answer === question.selectedAnswer;
+        })
+
+        const incorrectAnswers = questions.filter((question) => {
+            return question.answer !== question.selectedAnswer;
+        })
+    }
+
+
+
     return (
         <div className='question'>
                 {questions.map((q) => (
@@ -11,7 +25,7 @@ function Question({questions}) {
                 <div>******************************************************************************************</div>
             </div>
                 ))}
-                <button>Finish Quiz</button>
+                <button onClick={completeQuiz}>Finish Quiz</button>
 
         </div>
     )
