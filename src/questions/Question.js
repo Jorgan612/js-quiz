@@ -2,28 +2,7 @@ import { useState, useEffect } from 'react';
 import Answer from './answers/Answer';
 import './Question.scss';
 
-function Question({questions, completeQuiz}) {
-
-    // const [score, setScore] = useState(null)
-
-
-    // const completeQuiz = () => {
-    //     const scoreBreakdown = questions.reduce((acc, question) => {
-    //         if (question.answer === question.selectedAnswer) {
-    //             acc.correct.push(question);
-    //             question.isCorrect = true;
-    //         } else {
-    //             acc.incorrect.push(question);
-    //             question.isCorrect = false;
-    //         }
-    //         return acc;
-
-    //     }, {correct: [], incorrect: []})
-    //     setScore(scoreBreakdown);
-
-    //     calculateScore()
-    // }
-
+function Question({questions, completeQuiz, quizComplete}) {
 
 
     return (
@@ -31,7 +10,7 @@ function Question({questions, completeQuiz}) {
                 {questions.map((q) => (
             <div key={q.question}>
                 <p>{q.question}</p>
-                <Answer question={q} />
+                <Answer question={q} quizComplete={quizComplete} />
                 <div>******************************************************************************************</div>
             </div>
                 ))}

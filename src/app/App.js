@@ -8,12 +8,13 @@ import Question from '../questions/Question';
 
 function App() {
   const [quizComplete, setquizComplete] = useState(false);
-  const [score, setScore] = useState(null)
+  const [score, setScore] = useState(null);
+  const [total, setTotal] = useState(0);
 
 
   useEffect(() => {
     if (score) {
-      calculateScore();
+      calculatePercentage();
     }
   }, [score])
 
@@ -31,10 +32,22 @@ function App() {
 
       }, {correct: [], incorrect: []})
       setScore(scoreBreakdown);
+      console.log('testing?')
   }
 
-  const calculateScore = () => {
-    
+  const calculatePercentage= () => {
+    setTotal(Math.round(score.correct.length/questions.length * 100));
+    console.log('calc?')
+    setquizComplete(true);
+  }
+
+  const resetQuiz = () => {
+    setquizComplete(false);
+    questions.forEach((question) => {
+      // console.log('question', question)
+      question.isCorrect = false;
+      question.selectedAnswer = '';
+    })
   }
 
   return (
@@ -43,15 +56,15 @@ function App() {
         JS Quiz!
       </header>
       <div className='question-answers-container'>
-        <Question questions={questions} completeQuiz={completeQuiz} />
+        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} />
       </div>
       <div className='lists'>
 
       </div>
-      {!quizComplete && 
+      {quizComplete && 
       <div className='score'>
-        <p>You got {score.correct.length} out of {questions.length} questions correct! Score: {Math.round(score.correct.length/questions.length * 100)}%</p>
-        <button>Retry?</button>
+        <p>You got {score.correct.length} out of {questions.length} questions correct! Score: {total}%</p>
+        <button onClick={resetQuiz}>Retry?</button>
       </div>}
     </div>
   );
