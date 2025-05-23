@@ -37,3 +37,29 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
+
+button:hover {
+    border: 2px solid #44b253; 
+    background-color: rgb(144, 253, 158, .4);
+    transition: .5s;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  border: 1px solid red;
+  font-size: 2rem;
+  color: white;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: #282c34;
+  }
+}

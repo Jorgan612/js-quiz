@@ -1,18 +1,28 @@
+import { useState, useEffect } from 'react';
 import Answer from './answers/Answer';
 import './Question.scss';
 
-function Question({questions}) {
+function Question({questions, completeQuiz}) {
+
+    // const [score, setScore] = useState(null)
 
 
-    const completeQuiz = () => {
-        const correctAnswers = questions.filter((question) => {
-            return question.answer === question.selectedAnswer;
-        })
+    // const completeQuiz = () => {
+    //     const scoreBreakdown = questions.reduce((acc, question) => {
+    //         if (question.answer === question.selectedAnswer) {
+    //             acc.correct.push(question);
+    //             question.isCorrect = true;
+    //         } else {
+    //             acc.incorrect.push(question);
+    //             question.isCorrect = false;
+    //         }
+    //         return acc;
 
-        const incorrectAnswers = questions.filter((question) => {
-            return question.answer !== question.selectedAnswer;
-        })
-    }
+    //     }, {correct: [], incorrect: []})
+    //     setScore(scoreBreakdown);
+
+    //     calculateScore()
+    // }
 
 
 
