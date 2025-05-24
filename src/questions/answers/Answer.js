@@ -25,15 +25,15 @@ function Answer({question, quizComplete}) {
     )
 }
 
+// NOTE: When quizComplete is no longer false 'default' is the style. Add like an else if to the terinary to account for completed quiz status.
+
 
 export default Answer;
-
-// Figure out adding selected Answer to question object to get score when Finish Quiz button is clicked.
 
 /*
 Implement Finish Quiz button functinality. It should: 
 [X] Verify selected answer is correct answer
-[ ] Update styling to reflect correct vs incorrect answer -- COME BACK TO THIS POINT UPDATED CONDITIONAL RENDER LOGIC ABOVE AND NO STYLING IS WORKING ON SELECTION
+[ ] Update styling to reflect correct vs incorrect answer -- COME BACK TO THIS POINT UPDATED CONDITIONAL RENDER LOGIC ABOVE AND NO STYLING IS WORKING ON SELECTION AFTER FINISH QUIZ BUTTON IS CLICKED! (Selected styling works before that)
 [X] Provide percentage correct text at the bottom of the screen
 [X] Show 'Retry?' button 
 */

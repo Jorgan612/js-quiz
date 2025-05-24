@@ -10,8 +10,7 @@ function App() {
   const [quizComplete, setquizComplete] = useState(false);
   const [score, setScore] = useState(null);
   const [total, setTotal] = useState(0);
-
-
+  
   useEffect(() => {
     if (score) {
       calculatePercentage();
