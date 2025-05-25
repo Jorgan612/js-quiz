@@ -40,6 +40,24 @@ function App() {
     setquizComplete(true);
   }
 
+  const showAnswers = (question) => {
+    // console.log('question', question)
+    if (!quizComplete && question.selectedAnswer) {
+      console.log('IF 1')
+      question.answers.forEach((answer) => {
+        // console.log('answer', answer)
+        if (answer === question.selectedAnswer) {
+          console.log('IF 2?', answer, ":", question.selectedAnswer)
+          return 'selected';
+        } 
+      })
+    }
+
+    if (!question.selectedAnswer) {
+      return 'default';
+    }
+  }
+  
   const resetQuiz = () => {
     setquizComplete(false);
     questions.forEach((question) => {
@@ -55,7 +73,7 @@ function App() {
         JS Quiz!
       </header>
       <div className='question-answers-container'>
-        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} />
+        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} showAnswers={showAnswers} />
       </div>
       <div className='lists'>
 

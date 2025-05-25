@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Answer from './answers/Answer';
 import './Question.scss';
 
-function Question({questions, completeQuiz, quizComplete}) {
+function Question({questions, completeQuiz, quizComplete, showAnswers}) {
 
 
     return (
@@ -10,7 +10,7 @@ function Question({questions, completeQuiz, quizComplete}) {
                 {questions.map((q) => (
             <div key={q.question}>
                 <p>{q.question}</p>
-                <Answer question={q} quizComplete={quizComplete} />
+                <Answer question={q} quizComplete={quizComplete} showAnswers={showAnswers} />
                 <div>******************************************************************************************</div>
             </div>
                 ))}

@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react'
 import './Answers.scss'
 
-function Answer({question, quizComplete}) {
+function Answer({question, quizComplete, showAnswers}) {
 
     const [selectedAnswer, setSelectedAnswer] = useState('')
-
-    useEffect(() => {
-
-    }, [selectedAnswer]);
 
     const selectAnswer = (answer, question) => {
         setSelectedAnswer(answer)
@@ -17,9 +13,16 @@ function Answer({question, quizComplete}) {
     return (
         <div className='answers'>
             {question.answers.map((answer) => (
-                <div className={`answer ${(selectedAnswer === answer && !quizComplete) ? 'selected' : 'default'}`} onClick={() => {selectAnswer(answer, question)}} key={answer}>
-                    <p key={answer}>{answer}</p>
+                <div className='answer'>
+                    {!quizComplete && <div className={`test1 ${answer === selectedAnswer && !quizComplete ? 'selected' : 'default'}`} onClick={() => {selectAnswer(answer, question)}} key={answer}>
+                        <p key={answer}>{answer}</p>
+                    </div>}
+
+                    {quizComplete && <div className={`test2 ${answer === selectAnswer ? 'correct' : 'incorrect'}`} onClick={() => {selectAnswer(answer, question)}} key={answer}>
+                        <p key={answer}>{answer}</p>
+                    </div>}
                 </div>
+
             ))}
         </div>
     )
