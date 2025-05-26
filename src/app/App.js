@@ -13,6 +13,7 @@ function App() {
   
   useEffect(() => {
     if (score) {
+      console.log(score)
       calculatePercentage();
     }
   }, [score])
@@ -31,31 +32,12 @@ function App() {
 
       }, {correct: [], incorrect: []})
       setScore(scoreBreakdown);
-      console.log('testing?')
   }
 
   const calculatePercentage= () => {
+    console.log('correct', score.correct.length, 'incorrect', score.incorrect.length)
     setTotal(Math.round(score.correct.length/questions.length * 100));
-    console.log('calc?')
     setquizComplete(true);
-  }
-
-  const showAnswers = (question) => {
-    // console.log('question', question)
-    if (!quizComplete && question.selectedAnswer) {
-      console.log('IF 1')
-      question.answers.forEach((answer) => {
-        // console.log('answer', answer)
-        if (answer === question.selectedAnswer) {
-          console.log('IF 2?', answer, ":", question.selectedAnswer)
-          return 'selected';
-        } 
-      })
-    }
-
-    if (!question.selectedAnswer) {
-      return 'default';
-    }
   }
   
   const resetQuiz = () => {
@@ -73,7 +55,7 @@ function App() {
         JS Quiz!
       </header>
       <div className='question-answers-container'>
-        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} showAnswers={showAnswers} />
+        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} />
       </div>
       <div className='lists'>
 
@@ -88,3 +70,10 @@ function App() {
 }
 
 export default App;
+
+/* 
+Retry botton should:
+[ ] Reset quiz by clearing selected answers
+[ ] Reset styling of answers to default
+[ ] Clear/hide percentage correct and 'Retry?' botton
+ */
