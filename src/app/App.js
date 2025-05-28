@@ -7,9 +7,12 @@ import Question from '../questions/Question';
 
 
 function App() {
+
+  const [selectedAnswer, setSelectedAnswer] = useState('');
   const [quizComplete, setquizComplete] = useState(false);
   const [score, setScore] = useState(null);
   const [total, setTotal] = useState(0);
+
   
   useEffect(() => {
     if (score) {
@@ -35,15 +38,16 @@ function App() {
   }
 
   const calculatePercentage= () => {
-    console.log('correct', score.correct.length, 'incorrect', score.incorrect.length)
     setTotal(Math.round(score.correct.length/questions.length * 100));
     setquizComplete(true);
   }
   
   const resetQuiz = () => {
     setquizComplete(false);
+    setScore(null);
+    setTotal(0);
+    setSelectedAnswer('');
     questions.forEach((question) => {
-      // console.log('question', question)
       question.isCorrect = false;
       question.selectedAnswer = '';
     })
@@ -55,7 +59,7 @@ function App() {
         JS Quiz!
       </header>
       <div className='question-answers-container'>
-        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} />
+        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer} />
       </div>
       <div className='lists'>
 
@@ -71,9 +75,10 @@ function App() {
 
 export default App;
 
-/* 
-Retry botton should:
-[ ] Reset quiz by clearing selected answers
-[ ] Reset styling of answers to default
-[ ] Clear/hide percentage correct and 'Retry?' botton
- */
+/*
+NEW BUG!
+
+Moved selectedAnswer to App to be able to clear selected answers when Retry? button is clicked. Now selected Answer only applies styling to most recent answer selected and does not maintain styling for previously selected answers.
+
+
+*/

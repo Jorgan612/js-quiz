@@ -2,20 +2,14 @@ import { useState, useEffect } from 'react';
 import Answer from './answers/Answer';
 import './Question.scss';
 
-function Question({questions, completeQuiz, quizComplete}) {
-
-    const [allSelected, setAllSelected] = useState(false);
-
-    const submit = () => {
-        completeQuiz();
-    }
+function Question({questions, completeQuiz, quizComplete, selectedAnswer, setSelectedAnswer}) {
 
     return (
         <div className='question'>
                 {questions.map((q) => (
             <div key={q.question}>
                 <p>{q.question}</p>
-                <Answer question={q} quizComplete={quizComplete} />
+                <Answer question={q} quizComplete={quizComplete} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer} />
                 <div>******************************************************************************************</div>
             </div>
                 ))}
