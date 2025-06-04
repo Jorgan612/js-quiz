@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import Answer from './answers/Answer';
 import './Question.scss';
 
-function Question({questions, completeQuiz, quizComplete, selectedAnswer, setSelectedAnswer}) {
+function Question({questions, completeQuiz, quizComplete, setSelectedAnswer}) {
 
     return (
         <div className='question'>
                 {questions.map((q) => (
             <div key={q.question}>
                 <p>{q.question}</p>
-                <Answer question={q} quizComplete={quizComplete} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer} />
+                <Answer question={q} quizComplete={quizComplete} setSelectedAnswer={setSelectedAnswer} />
                 <div>******************************************************************************************</div>
             </div>
                 ))}

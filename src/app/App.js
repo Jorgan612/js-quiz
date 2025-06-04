@@ -16,7 +16,6 @@ function App() {
   
   useEffect(() => {
     if (score) {
-      console.log(score)
       calculatePercentage();
     }
   }, [score])
@@ -59,7 +58,7 @@ function App() {
         JS Quiz!
       </header>
       <div className='question-answers-container'>
-        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer} />
+        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} setSelectedAnswer={setSelectedAnswer} />
       </div>
       <div className='lists'>
 
@@ -74,11 +73,3 @@ function App() {
 }
 
 export default App;
-
-/*
-NEW BUG!
-
-Moved selectedAnswer to App to be able to clear selected answers when Retry? button is clicked. Now selected Answer only applies styling to most recent answer selected and does not maintain styling for previously selected answers.
-
-
-*/
