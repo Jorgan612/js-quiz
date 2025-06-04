@@ -22,18 +22,26 @@ function App() {
 
 
   const completeQuiz = () => {
-      const scoreBreakdown = questions.reduce((acc, question) => {
-          if (question.answer === question.selectedAnswer) {
-              acc.correct.push(question);
-              question.isCorrect = true;
-          } else {
-              acc.incorrect.push(question);
-              question.isCorrect = false;
-          }
-          return acc;
 
-      }, {correct: [], incorrect: []})
-      setScore(scoreBreakdown);
+    const scoreBreakdown = questions.reduce((acc, question) => {
+        if (question.answer === question.selectedAnswer) {
+            acc.correct.push(question);
+            question.isCorrect = true;
+        } else {
+          if (question.selectedAnswer === null) {
+            acc.unanswered.push(question);
+          } else {
+            acc.incorrect.push(question);
+            question.isCorrect = false;
+          }
+        }
+        return acc;
+
+    }, {correct: [], incorrect: [], unanswered: []})
+
+    console.log('scoreBreakdown', scoreBreakdown)
+
+    setScore(scoreBreakdown);
   }
 
   const calculatePercentage= () => {

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import './Answers.scss'
 
 function Answer({question, quizComplete, setSelectedAnswer}) {
@@ -11,12 +10,12 @@ function Answer({question, quizComplete, setSelectedAnswer}) {
     return (
         <div className='answers'>
             {question.answers.map((answer) => (
-                <div className='default' key={answer}>
+                <div className={`${!question.selectedAnswer} ? 'unanswered' : 'default'`} key={answer}>
                     {!quizComplete && <div className={`${answer === question.selectedAnswer ? 'selected' : 'default'}`} onClick={() => {selectAnswer(answer, question)}}>
                         <p key={answer}>{answer}</p>
                     </div>}
 
-                    {quizComplete && <div className={`${answer === question.selectedAnswer ? (question.answer === answer ? 'correct' : 'incorrect') : 'default'}`}>
+                    {quizComplete && <div className={`${answer === question.selectedAnswer ? (question.answer === answer ? 'correct' : 'incorrect') : 'default'}`} onClick={() => {selectAnswer(answer, question)}}>
                         <p key={answer}>{answer}</p>
                     </div>}
                 </div>
@@ -26,3 +25,5 @@ function Answer({question, quizComplete, setSelectedAnswer}) {
 }
 
 export default Answer;
+
+// [ ] CONTINUE BUILDING STYLING FOR UNANSWERED QUESTIONS;

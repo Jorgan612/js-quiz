@@ -2,7 +2,7 @@ const questions = [
     {
         question: 'When a variable is declared but not assigned a value, what is the value of the variable?',
         answers: ['null', 'declared', 'undefined', 'invalid'],
-        answer: 'null',
+        answer: 'undefined',
         isCorrect: null,
         selectedAnswer: null
     },
