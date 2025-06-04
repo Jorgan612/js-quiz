@@ -10,9 +10,9 @@ function Answer({question, quizComplete, setSelectedAnswer}) {
     return (
         <div className='answers'>
             {question.answers.map((answer) => (
-                <div className={`${!question.selectedAnswer} ? 'unanswered' : 'default'`} key={answer}>
+                <div key={answer}>
                     {!quizComplete && <div className={`${answer === question.selectedAnswer ? 'selected' : 'default'}`} onClick={() => {selectAnswer(answer, question)}}>
-                        <p key={answer}>{answer}</p>
+                        <p>{answer}</p>
                     </div>}
 
                     {quizComplete && <div className={`${answer === question.selectedAnswer ? (question.answer === answer ? 'correct' : 'incorrect') : 'default'}`} onClick={() => {selectAnswer(answer, question)}}>
