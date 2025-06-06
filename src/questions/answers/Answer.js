@@ -25,5 +25,3 @@ function Answer({question, quizComplete, setSelectedAnswer}) {
 }
 
 export default Answer;
-
-// [ ] CONTINUE BUILDING STYLING FOR UNANSWERED QUESTIONS;
