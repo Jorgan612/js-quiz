@@ -64,7 +64,7 @@ function App() {
         JS Quiz!
       </header>
       <div className='question-answers-container'>
-        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} setSelectedAnswer={setSelectedAnswer} />
+        <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} setSelectedAnswer={setSelectedAnswer} score={score} />
       </div>
       <div className='lists'>
 

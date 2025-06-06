@@ -1,7 +1,7 @@
 import Answer from './answers/Answer';
 import './Question.scss';
 
-function Question({questions, completeQuiz, quizComplete, setSelectedAnswer}) {
+function Question({questions, completeQuiz, quizComplete, setSelectedAnswer, score}) {
 
     return (
         <div className='question'>
@@ -13,6 +13,8 @@ function Question({questions, completeQuiz, quizComplete, setSelectedAnswer}) {
             </div>
                 ))}
                 {<button onClick={completeQuiz}>Finish Quiz</button>}
+
+                {score?.unanswered.length && <p className={`${( score?.unanswered.length) && 'error-text'}`}> Oh no! One or more questions are missing a selected answer. Please go back and answer all questions then click Finish Quiz.</p>}
         </div>
     )
 }
