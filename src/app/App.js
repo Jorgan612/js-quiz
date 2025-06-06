@@ -39,8 +39,6 @@ function App() {
 
     }, {correct: [], incorrect: [], unanswered: []})
 
-    console.log('scoreBreakdown', scoreBreakdown)
-
     setScore(scoreBreakdown);
   }
 

@@ -13,7 +13,6 @@ function Question({questions, completeQuiz, quizComplete, setSelectedAnswer}) {
             </div>
                 ))}
                 {<button onClick={completeQuiz}>Finish Quiz</button>}
-
         </div>
     )
 }
