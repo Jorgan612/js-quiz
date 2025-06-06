@@ -28,7 +28,7 @@ function App() {
             acc.correct.push(question);
             question.isCorrect = true;
         } else {
-          if (question.selectedAnswer === null) {
+          if (question.selectedAnswer === '') {
             acc.unanswered.push(question);
           } else {
             acc.incorrect.push(question);

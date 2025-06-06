@@ -6,7 +6,7 @@ function Question({questions, completeQuiz, quizComplete, setSelectedAnswer, sco
     return (
         <div className='question'>
             {questions.map((q) => (
-                <div className={`${(q.selectedAnswer === null && quizComplete) && 'unanswered'}`} key={q.question}>
+                <div className={`${(q.selectedAnswer === '' && quizComplete) && 'unanswered'}`} key={q.question}>
                     <p>{q.question}</p>
                     <Answer question={q} quizComplete={quizComplete} setSelectedAnswer={setSelectedAnswer} />
                     <div>******************************************************************************************</div>

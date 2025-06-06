@@ -15,7 +15,7 @@ function Answer({question, quizComplete, setSelectedAnswer}) {
                         <p>{answer}</p>
                     </div>}
 
-                    {quizComplete && <div className={`${answer === question.selectedAnswer ? (question.answer === answer ? 'correct' : 'incorrect') : 'default'}`} onClick={() => {selectAnswer(answer, question)}}>
+                    {quizComplete && <div className={`${answer === question.selectedAnswer ? (question.answer === answer ? 'correct' : 'incorrect') : 'default'}`} onClick={question.selectedAnswer === '' ? () => {selectAnswer(answer, question)} : undefined}>
                         <p key={answer}>{answer}</p>
                     </div>}
                 </div>
