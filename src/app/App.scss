@@ -19,6 +19,31 @@
   background-color: #282c34;
 }
 
+.add-question {
+  width: 100%;
+  
+  input {
+    height: 1.5rem;
+    width: 24rem;
+    margin: 1rem;
+    padding: .5rem;
+  }
+
+  input:focus {
+  border-color: #4CAF50;
+  background-color: #44914e;
+  outline: none;
+  box-shadow: 0 0 5px #4CAF50;
+  color: #fff;
+  font-weight: 700;
+  }
+
+  button {
+    height: 2.8rem;
+    font-size: 1rem;
+  }
+}
+
 .question-answers-container {
   height: 70vh;
   width: 90vw;

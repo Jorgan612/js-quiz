@@ -63,6 +63,10 @@ function App() {
       <header className="App-header">
         JS Quiz!
       </header>
+      <div className='add-question'>
+        <input placeholder='Add a question'/>
+        <button>Add</button>\
+      </div>
       <div className='question-answers-container'>
         <Question questions={questions} completeQuiz={completeQuiz} quizComplete={quizComplete} setSelectedAnswer={setSelectedAnswer} score={score} />
       </div>
@@ -79,3 +83,4 @@ function App() {
 }
 
 export default App;
+
