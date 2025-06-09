@@ -84,3 +84,9 @@ function App() {
 
 export default App;
 
+
+// [ ] Should be able to add a question
+// [ ] Should be able to add possible answers to that question (In an array)
+// [ ] Should be able to declare which possible answer is the correct answer.
+// [ ] BEHIND THE SCENES: Each new question is an object to match format of existing questions array
+// [ ] New questions will be added to the end of the questions array
